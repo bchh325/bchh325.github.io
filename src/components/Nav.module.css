@@ -1,0 +1,12 @@
+.navContainer {
+    background-color: green;
+    position: relative;
+}
+
+.navContent {
+    background-color: blue;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    width: inherit;
+}

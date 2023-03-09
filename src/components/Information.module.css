@@ -1,0 +1,12 @@
+.container {
+    background-color: rgb(219, 250, 250);
+    height: 450px;
+    box-sizing: border-box;
+    margin: 20px 0px;
+    width: 50vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.App {
+    background-color: whitesmoke;
+}
