@@ -1,21 +1,33 @@
+import { hover } from '@testing-library/user-event/dist/hover'
 import React, { useState } from 'react'
 import styles from './Skills.module.css'
 
-export default function Skills() {
+export default function Skills({ hoverBg, setHover, setHoverImage }) {
     const [highlight, setHighlight] = useState(null)
 
     const handleHover = (id) => {
         setHighlight(id)
+        hoverBg(id)
     }
 
     const resetHover = () => {
         setHighlight(null)
     }
 
+    const containerEnter = () => {
+        setHover("hover-bg")
+        setHoverImage("hover-imgbg")
+    }
+
+    const containerLeave = () => {
+        setHover("")
+        setHoverImage("")
+    }
+
     return (
         <div className={styles.skillsContainer}>
             <div className={styles.itemsContainer}>
-                <div>
+                <div className={styles.titles} onMouseLeave={containerLeave} onMouseEnter={containerEnter}>
                     <span onMouseLeave={resetHover} onMouseEnter={() => handleHover(1)}>Title</span>
                     <span onMouseLeave={resetHover} onMouseEnter={() => handleHover(2)}>Title</span>
                     <span onMouseLeave={resetHover} onMouseEnter={() => handleHover(3)}>Title</span>

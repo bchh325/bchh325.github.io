@@ -1,0 +1,9 @@
+.container {
+    height: max-content;
+    box-sizing: border-box;
+    margin: 20px 0px;
+    padding: 0px 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}

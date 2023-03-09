@@ -1,19 +1,21 @@
 .skillsContainer {
-    background-color: black;
+    font-size: 1.5rem;
     height: 25vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .itemsContainer {
-    background-color: green;
     display: grid;
     align-items: center;
     justify-items: center;
 }
 
-.itemsContainer span {
+.titles:hover > span {
     opacity: 0.5;
+}
+
+.itemsContainer span {
     display: block;
     margin: 10px 0px;
     padding: 5px 30px;
@@ -21,20 +23,19 @@
     transition: opacity 0.3s ease-out;
 }
 
-.itemsContainer span:hover {
+.titles:hover > span:hover {
     opacity: 1;
 }
 
 .iconsContainer {
     display: grid;
-    background-color: blue;
     align-items: center;
     justify-items: center;
 }
 
 .rows {
     opacity: 0.5;
-    color: white;
+    color: black;
     display: flex;
     column-gap: 5px;
     padding: 3px 15px;
@@ -46,7 +47,7 @@
 }
 
 .secondRow {
-    border: 1px solid white;
+    border: 1px solid black;
 }
 
 .thirdRow {

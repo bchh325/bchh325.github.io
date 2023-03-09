@@ -1,0 +1,89 @@
+.project {
+    background-color: white;
+    margin: 25px 0px;
+    padding: 50px 0px;
+    color: black;
+    box-sizing: border-box;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.left {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 30vh 1fr;
+}
+
+.projectInformation {
+    color: black;
+}
+
+.cardContainer,
+.card,
+.tech {
+    aspect-ratio: 5 / 7;
+    width: 200px;
+}
+
+.cardContainer {
+    position: relative;
+    margin-top: 20px;
+}
+
+.cardContainer:hover>.card:nth-child(1) {
+    transform: translateX(-104%) scale(1)
+}
+
+.cardContainer:hover>.card:nth-child(2) {
+    transform: scale(1)
+}
+
+.cardContainer:hover>.card:nth-child(3) {
+    transform: translateX(104%) scale(1)
+}
+
+.cardContainer:hover>.tech {
+    transform: translatex(-25%) translateY(400%) scale(1);
+}
+
+.card {
+    transition: transform 0.5s cubic-bezier(.05, .45, .13, .93);
+    position: absolute;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tech {
+    color: white;
+    width: 200%;
+    transition: transform 0.5s cubic-bezier(.05, .45, .13, .93);
+    height: 25%;
+    transform: translatex(-25%) translateY(400%) scale(0);
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.tech span {
+    border: 1px solid red;
+}
+
+.card:nth-child(1) {
+    transform: translateX(-40px) scale(0.85);
+    z-index: 3;
+}
+
+.card:nth-child(2) {
+    transform: scale(0.90);
+    z-index: 4;
+}
+
+.card:nth-child(3) {
+    transform: translateX(40px) scale(0.80);
+    z-index: 2;
+}
