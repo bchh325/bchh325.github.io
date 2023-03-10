@@ -29,13 +29,13 @@ function App() {
       <div>
         <Information />
         <Skills hoverBg={hoverBg} setHover={setHover} setHoverImage={setHoverImage} />
-        <Header imgUrl={"https://fastly.picsum.photos/id/973/2560/1440.jpg?grayscale&hmac=0LbzRYXoWJTDpq-T-_2pOhk5648COIVEadPPxhJTqog"}/>
-        <Project swap={true}/>
-        <Header imgUrl={url1}/>
+        <Header imgUrl={"https://fastly.picsum.photos/id/973/2560/1440.jpg?grayscale&hmac=0LbzRYXoWJTDpq-T-_2pOhk5648COIVEadPPxhJTqog"} />
+        <Project swap={true} />
+        <Header imgUrl={url1} />
         <Project />
-        <Header imgUrl={"https://fastly.picsum.photos/id/355/2560/1440.jpg?grayscale&hmac=seui_2O7c0fIvFFHOhepynWHHGM-8OSC4Zrvzg3tL1c"}/>
-        <Project swap={true}/>
-        <Header imgUrl={"https://fastly.picsum.photos/id/846/2560/1440.jpg?grayscale&hmac=uS484d2bN0352afeHdqNmKfZNZDbGArHgxaJ29lUX4Q"}/>
+        <Header imgUrl={"https://fastly.picsum.photos/id/355/2560/1440.jpg?grayscale&hmac=seui_2O7c0fIvFFHOhepynWHHGM-8OSC4Zrvzg3tL1c"} />
+        <Project swap={true} />
+        <Header imgUrl={"https://fastly.picsum.photos/id/846/2560/1440.jpg?grayscale&hmac=uS484d2bN0352afeHdqNmKfZNZDbGArHgxaJ29lUX4Q"} />
         <Project />
         <Information />
         <Information />

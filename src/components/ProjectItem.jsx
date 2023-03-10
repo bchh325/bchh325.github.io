@@ -21,7 +21,20 @@ export default function ProjectItem({ swap }) {
         </div>
     </div>
 
-    const projectInfoCol = <div className={styles.right}>Second</div>
+    const projectInfoCol =
+        <div className={styles.right}>
+            <div>
+                <span>Features</span>
+            </div>
+            <div>
+                <span>Stuff</span>
+                <span>Stuff</span>
+                <span>Stuff</span>
+                <span>Stuff</span>
+                <span>Stuff</span>
+                <span>Stuff</span>
+            </div>
+        </div>
 
     return (
         <div className={styles.project}>

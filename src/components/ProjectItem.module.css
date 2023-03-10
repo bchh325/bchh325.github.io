@@ -18,14 +18,35 @@
 }
 
 .right {
-    outline: 1px solid green;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.right div:first-child {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-right: 2px solid black;
+    padding-right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.right div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    row-gap: 20px;
+    font-size: 1.2rem;
 }
 
 .projectInformation {
     color: black;
     padding: 0px 20px;
-    outline: 1px solid green;
 }
 
 .cardContainer,
