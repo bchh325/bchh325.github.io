@@ -1,6 +1,5 @@
 .project {
     background-color: white;
-    margin: 25px 0px;
     padding: 50px 0px;
     color: black;
     box-sizing: border-box;
@@ -8,17 +7,25 @@
     justify-items: center;
     grid-template-columns: 1fr 1fr;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 70vh;
+    outline: 3px solid red;
 }
 
 .left {
     display: grid;
     justify-items: center;
-    grid-template-rows: 30vh 1fr;
+    grid-template-rows: 50% 50%;
+}
+
+.right {
+    outline: 1px solid green;
+    width: 100%'';
 }
 
 .projectInformation {
     color: black;
     padding: 0px 20px;
+    outline: 1px solid green;
 }
 
 .cardContainer,
@@ -26,6 +33,7 @@
 .tech {
     aspect-ratio: 5 / 7;
     width: 200px;
+    outline: 1px solid green;
 }
 
 .cardContainer {
@@ -57,6 +65,7 @@
 }
 
 .tech {
+    outline: 1px solid green;
     color: white;
     width: 200%;
     transition: transform 0.5s cubic-bezier(.05, .45, .13, .93);

@@ -1,0 +1,15 @@
+.container {
+    height: 75vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+
