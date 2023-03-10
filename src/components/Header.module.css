@@ -4,12 +4,24 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
+    display: grid;
+    place-items: center;
     justify-content: center;
     align-items: center;
     font-size: 5rem;
     color: whitesmoke;
     font-weight: bolder;
+    grid-template-columns: 1fr 1fr;
 }
 
+.title {
+    opacity: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 
+.other {
+    display: flex;
+    column-gap: 25px;
+}

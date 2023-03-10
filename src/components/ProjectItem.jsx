@@ -5,7 +5,15 @@ import { Parallax } from 'react-scroll-parallax';
 
 export default function ProjectItem({ swap }) {
 
-    const projectCol = <div className={styles.left}>
+    const leftStyle = {
+        "border-radius": "0px 150px 150px 0px"
+    }
+
+    const rightStyle = {
+        "border-radius": "150px 0px 0px 150px"
+    }
+
+    const projectCol = <div style={swap ? leftStyle : rightStyle} className={styles.left}>
         <div className={styles.cardContainer}>
             <div className={styles.card}>Project Img 1</div>
             <div className={styles.card}>Project Img 2</div>

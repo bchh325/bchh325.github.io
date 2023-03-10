@@ -1,12 +1,11 @@
 .navContainer {
-    background-color: green;
     position: relative;
     z-index: 1;
 }
 
 .navContent {
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #13276F;
+    box-shadow: rgba(20, 20, 20, 0.2) 0px 7px 29px 0px;
     height: 100vh;
     position: sticky;
     top: 0;
@@ -19,6 +18,7 @@
 }
 
 .navContent span {
+    color: whitesmoke;
     outline: 1px solid green;
     width: 100%;
     text-align: center;

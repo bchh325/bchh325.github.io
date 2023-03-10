@@ -19,7 +19,11 @@ function App() {
     currentImageRef.dataset.active = id
   }
 
-  const url1 = "https://fastly.picsum.photos/id/888/2560/1440.jpg?grayscale&hmac=Wvcaw3SWA-NxJXFez_gGHlPRR31HaE46JJd9Md3OtQs"
+  // const url1 = "https://fastly.picsum.photos/id/888/2560/1440.jpg?grayscale&hmac=Wvcaw3SWA-NxJXFez_gGHlPRR31HaE46JJd9Md3OtQs"
+  const url1 = "https://picsum.photos/2560/1440"
+  const url2 = "https://picsum.photos/2561/1440"
+  const url3 = "https://picsum.photos/2562/1440"
+  const url4= "https://picsum.photos/2563/1440"
   return (
     <div className="App">
       
@@ -30,13 +34,13 @@ function App() {
       <div>
         <Information />
         <Skills hoverBg={hoverBg} setHover={setHover} setHoverImage={setHoverImage} />
-        <Header imgUrl={"https://fastly.picsum.photos/id/973/2560/1440.jpg?grayscale&hmac=0LbzRYXoWJTDpq-T-_2pOhk5648COIVEadPPxhJTqog"} />
+        <Header swap={true} imgUrl={url1} />
         <Project swap={true} />
-        <Header imgUrl={url1} />
+        <Header imgUrl={url2} />
         <Project />
-        <Header imgUrl={"https://fastly.picsum.photos/id/355/2560/1440.jpg?grayscale&hmac=seui_2O7c0fIvFFHOhepynWHHGM-8OSC4Zrvzg3tL1c"} />
+        <Header swap={true} imgUrl={url3} />
         <Project swap={true} />
-        <Header imgUrl={"https://fastly.picsum.photos/id/846/2560/1440.jpg?grayscale&hmac=uS484d2bN0352afeHdqNmKfZNZDbGArHgxaJ29lUX4Q"} />
+        <Header imgUrl={url4} />
         <Project />
         <Information />
         <Information />

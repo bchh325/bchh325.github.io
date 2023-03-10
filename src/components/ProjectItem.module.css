@@ -1,7 +1,7 @@
 .project {
-    background-color: white;
+    background-color: #13276F;
     padding: 50px 0px;
-    color: black;
+    color: whitesmoke;
     box-sizing: border-box;
     display: grid;
     justify-items: center;
@@ -12,10 +12,12 @@
 }
 
 .left {
+    background-color: #474555;
+    border-radius: 10px 40px 250px 80px;
     display: grid;
     justify-items: center;
     grid-template-rows: 70% 30%;
-    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+    box-shadow: rgb(14, 14, 14, 0.7) 0px 7px 29px 0px;
 }
 
 .rightContainer {
@@ -25,7 +27,7 @@
 }
 
 .right {
-    padding: 0px 10%;
+    padding: 0px 20%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -52,7 +54,6 @@
 }
 
 .projectInformation {
-    color: black;
     padding: 0px 20px;
 }
 
@@ -86,6 +87,7 @@
 }
 
 .card {
+    border-radius: 10px;
     transition: transform 0.5s cubic-bezier(.05, .45, .13, .93);
     position: absolute;
     background-color: whitesmoke;
