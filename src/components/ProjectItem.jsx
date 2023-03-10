@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import styles from './ProjectItem.module.css'
+import { Parallax } from 'react-scroll-parallax';
+
 
 export default function ProjectItem({ swap }) {
+
     const projectCol = <div className={styles.left}>
         <div className={styles.cardContainer}>
             <div className={styles.card}>Project Img 1</div>
@@ -22,7 +25,8 @@ export default function ProjectItem({ swap }) {
     </div>
 
     const projectInfoCol =
-        <div className={styles.right}>
+    <div className={styles.rightContainer}>
+        <Parallax speed={0} translateX={[swap ? 100 : -100, swap ? -100 : 100]} easing={'easeInOut'} className={styles.right}>
             <div>
                 <span>Features</span>
             </div>
@@ -34,7 +38,8 @@ export default function ProjectItem({ swap }) {
                 <span>Stuff</span>
                 <span>Stuff</span>
             </div>
-        </div>
+        </Parallax>
+    </div>
 
     return (
         <div className={styles.project}>

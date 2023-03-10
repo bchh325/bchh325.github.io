@@ -22,6 +22,7 @@ function App() {
   const url1 = "https://fastly.picsum.photos/id/888/2560/1440.jpg?grayscale&hmac=Wvcaw3SWA-NxJXFez_gGHlPRR31HaE46JJd9Md3OtQs"
   return (
     <div className="App">
+      
       <div className='App-bg-color'></div>
       {/* <div ref={backgroundRef} className={`App-bg ${hover}`}></div> */}
       <div ref={backgroundImageRef} className={`App-imgbg ${hoverImage}`}></div>

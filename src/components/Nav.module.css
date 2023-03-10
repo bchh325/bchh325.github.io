@@ -1,6 +1,7 @@
 .navContainer {
     background-color: green;
     position: relative;
+    z-index: 1;
 }
 
 .navContent {

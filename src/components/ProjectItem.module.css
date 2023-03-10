@@ -7,7 +7,7 @@
     justify-items: center;
     grid-template-columns: 1fr 1fr;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 70vh;
+    height: 80vh;
     outline: 3px solid red;
 }
 
@@ -15,14 +15,21 @@
     display: grid;
     justify-items: center;
     grid-template-rows: 70% 30%;
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+}
+
+.rightContainer {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
 }
 
 .right {
+    padding: 0px 10%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
     align-items: center;
-    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
 }
 
 .right div:first-child {
