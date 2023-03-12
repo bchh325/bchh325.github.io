@@ -9,7 +9,7 @@ export default function ParallaxBackground() {
         <span className={styles.name}>Bryan Chhorb</span>
         <span className={styles.position}>Full Stack Developer</span>
       </div>
-      <Parallax speed={0} className={`${styles["bg-1"]} ${styles.all}`} />
+      <Parallax speed={-3} className={`${styles["bg-1"]} ${styles.all}`} />
       <Parallax speed={-40} className={`${styles["bg-2"]} ${styles.all}`} />
       <Parallax speed={-50} className={`${styles["bg-3"]} ${styles.all}`} />
       <Parallax speed={-60} className={`${styles["bg-4"]} ${styles.all}`} />

@@ -1,8 +1,7 @@
 .container {
     background-color: #02162e;
-    height: 75vh;
+    height: 100vh;
     display: grid;
-    border: 1px solid white;
     color: #e2f1ff;
     grid-template-rows: max-content 1fr;
 }
