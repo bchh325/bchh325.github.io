@@ -1,40 +1,93 @@
-.navContainer {
-    position: relative;
-    z-index: 1;
-}
-
 .navContent {
-    background-color: #13276F;
+    background-color: #021225;
     box-shadow: rgba(20, 20, 20, 0.2) 0px 7px 29px 0px;
-    height: 100vh;
+    /* height: 100vh;
     position: sticky;
     top: 0;
-    width: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    width: inherit; */
+    display: grid;
+    top: 0;
+    z-index: 11;
+    position: fixed;
+    width: 100%;
+    max-height: max-content;
+    transition: transform 0.2s ease-in-out;
+    grid-template-columns: 1fr 1fr;
+    color: #e2f1ff;
+    font-size: 1.2rem;
 }
 
-.navContent span {
-    color: whitesmoke;
-    outline: 1px solid green;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0px;
-    margin: 10px 0px;
-    transition: opacity 0.4s cubic-bezier(.05, .45, .13, .93), transform 0.4s cubic-bezier(.05, .45, .13, .93);
-    font-size: 1.2rem;
+.collapse {
+    transform: translateY(-100%);
+}
+
+.left {
+    display: flex;
+    margin-left: 20px;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.links {
+    display: flex;
+}
+
+.links span {
+    transition: opacity 0.4s cubic-bezier(.05, .45, .13, .93), transform 0.3s cubic-bezier(.05, .45, .13, .93), color 0.4s cubic-bezier(.05, .45, .13, .93);
+    margin: 10px 20px;
     cursor: pointer;
 }
 
-.navContent:hover span {
+.links:hover span {
     opacity: 0.5;
-    transform: scale(0.90);
+    transform: scale(0.9);
 }
 
-.navContent:hover span:hover {
+.links:hover span:hover {
     opacity: 1;
     transform: scale(0.97);
+    color: #00C6BC;
+}
+
+.leftLinks {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    color: #e2f1ff;
+}
+
+.name {
+    cursor: default;
+}
+
+.name span:nth-child(1) {
+    margin-right: 5px;
+}
+
+.name span::first-letter {
+    color: #00C6BC;
+}
+
+.icon {
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(.05, .45, .13, .93)
+}
+
+.icon:hover {
+    transform: scale(1.25);
+}
+
+@media screen and (min-width: 3840px) {
+    .links span {
+        margin: 35px 20px;
+    }
+
+    .navContent {
+        font-size: 2.5rem;
+    }
 }

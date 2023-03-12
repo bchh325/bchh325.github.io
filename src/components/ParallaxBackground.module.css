@@ -1,0 +1,109 @@
+.container {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: #02162e;
+    position: relative;
+}
+
+.infoContainer {
+    font-weight: bolder;
+    color: #02162e;
+    position: absolute;
+    height: 100px;
+    left: 50%;
+    top: 25%;
+    width: 100%;
+    text-align: start;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    margin-left: 20px;
+    font-size: 5rem;
+}
+
+.position {
+    margin-left: 20px;
+    font-size: 1.8rem;
+}
+
+.all {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bg-1 {
+    background-image: url("../images/1.png");
+    z-index: 10;
+}
+
+.bg-2 {
+    background-image: url("../images/2.png");
+    z-index: 8;
+}
+
+.bg-3 {
+    background-image: url("../images/3.png");
+    z-index: 7;
+}
+
+.bg-4 {
+    background-image: url("../images/4.png");
+    z-index: 6;
+}
+
+.bg-5 {
+    background-image: url("../images/5.png");
+    z-index: 5;
+}
+
+.bg-6 {
+    background-image: url("../images/6.png");
+    z-index: 4;
+}
+
+.bg-7 {
+    background-image: url("../images/7.png");
+    z-index: 3;
+}
+
+.bg-8 {
+    background-image: url("../images/8.png");
+    z-index: 2;
+}
+
+.bg-birds {
+    background-image: url("../images/birds.png");
+    z-index: 4;
+}
+
+.bg-gradient {
+    background-image: url("../images/bg.png");
+    z-index: 1;
+}
+
+@media screen and (max-width: 1000px) {
+    .infoContainer {
+        left: 0%;
+        z-index: 6;
+        text-align: start;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .name {
+        margin-left: 20px;
+        font-size: 2.8rem;
+    }
+
+    .position {
+        margin-left: 20px;
+        font-size: 1.1rem;
+    }
+}

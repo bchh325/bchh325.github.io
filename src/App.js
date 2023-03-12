@@ -4,7 +4,8 @@ import Header from './components/Header';
 import Information from './components/Information';
 import Nav from './components/Nav';
 import Project from './components/Project';
-import Skills from './components/Skills';
+import ParallaxBackground from './components/ParallaxBackground';
+import { Parallax } from 'react-scroll-parallax';
 
 function App() {
   const backgroundRef = useRef(null)
@@ -23,17 +24,18 @@ function App() {
   const url1 = "https://picsum.photos/2560/1440"
   const url2 = "https://picsum.photos/2561/1440"
   const url3 = "https://picsum.photos/2562/1440"
-  const url4= "https://picsum.photos/2563/1440"
+  const url4 = "https://picsum.photos/2563/1440"
   return (
     <div className="App">
-      
+
       <div className='App-bg-color'></div>
       {/* <div ref={backgroundRef} className={`App-bg ${hover}`}></div> */}
       <div ref={backgroundImageRef} className={`App-imgbg ${hoverImage}`}></div>
-      <Nav />
       <div>
+        <Nav />
+        <ParallaxBackground />
         <Information />
-        <Skills hoverBg={hoverBg} setHover={setHover} setHoverImage={setHoverImage} />
+        {/* <Skills hoverBg={hoverBg} setHover={setHover} setHoverImage={setHoverImage} /> */}
         <Header swap={true} imgUrl={url1} />
         <Project swap={true} />
         <Header imgUrl={url2} />

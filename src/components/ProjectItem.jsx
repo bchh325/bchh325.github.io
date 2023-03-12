@@ -1,19 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './ProjectItem.module.css'
 import { Parallax } from 'react-scroll-parallax';
-
+import { useInView } from 'react-intersection-observer';
 
 export default function ProjectItem({ swap }) {
+    const [active, setActive] = useState(false)
+    const [ref, inView, entry] = useInView()
 
-    const leftStyle = {
-        "border-radius": "0px 150px 150px 0px"
-    }
+    useEffect(() => {
+        if (inView) {
+            setActive(true)
+        }
+    }, [inView])
 
-    const rightStyle = {
-        "border-radius": "150px 0px 0px 150px"
-    }
+    
 
-    const projectCol = <div style={swap ? leftStyle : rightStyle} className={styles.left}>
+    const swapStyle = swap ? styles.leftEdgeStyle : styles.rightEdgeStyle
+
+    const projectCol = <div ref={ref} className={`${styles.left} ${swapStyle} ${active ? styles.moveToOriginal : ""}`}>
         <div className={styles.cardContainer}>
             <div className={styles.card}>Project Img 1</div>
             <div className={styles.card}>Project Img 2</div>
@@ -34,7 +38,7 @@ export default function ProjectItem({ swap }) {
 
     const projectInfoCol =
     <div className={styles.rightContainer}>
-        <Parallax speed={0} translateX={[swap ? 100 : -100, swap ? -100 : 100]} easing={'easeInOut'} className={styles.right}>
+        <div className={`${styles.right} ${swapStyle} ${active ? styles.moveToOriginal : ""}`}>
             <div>
                 <span>Features</span>
             </div>
@@ -46,7 +50,7 @@ export default function ProjectItem({ swap }) {
                 <span>Stuff</span>
                 <span>Stuff</span>
             </div>
-        </Parallax>
+        </div>
     </div>
 
     return (

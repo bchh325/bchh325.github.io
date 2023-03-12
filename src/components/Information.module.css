@@ -1,27 +1,100 @@
 .container {
-    height: 450px;
+    background-color: #02162e;
+    height: 75vh;
+    display: grid;
+    border: 1px solid white;
+    color: #e2f1ff;
+    grid-template-rows: max-content 1fr;
+}
+
+.columnHeader {
     display: flex;
-    box-sizing: border-box;
+    justify-content: center;
+    transition: transform 1s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50%);
+}
+
+.columnHeader span {
+    font-size: 2rem;
     margin: 20px 0px;
+    cursor: default;
+}
+
+.myInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myInfo span:nth-child(1) {
+    font-size: 4rem;
+}
+
+.myInfo span:nth-child(2) {
+    font-size: 2rem;
+}
+
+.additionalInfo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.additionalInfo div {
     width: 100%;
 }
 
-.information {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    outline: 1px solid green;
-    margin-left: 15%;
-    width: 50%;
-    display: grid;
-    place-items: center;
-    position: relative;
+.skills {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    border-right: 1px solid red;
+    justify-content: center;
+    row-gap: 10%;
 }
 
-.card {
-    height: 50%;
-    position: absolute;
-    width: 40%;
-    right: -25%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: whitesmoke;
-    outline: 1px solid red;
+.skillsIconsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.icon {
+    font-size: 0.75rem;
+    aspect-ratio: 1/1;
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50%);
+
+}
+
+.icon span {
+    color: #00C6BC;
+    cursor: default;
+}
+
+.display {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (min-width: 2560px) {
+    .icon svg {
+        flex: 1 0 30%;
+        width: 60px;
+    }
+
+    .icon span {
+        font-size: 1.1rem;
+    }
 }
