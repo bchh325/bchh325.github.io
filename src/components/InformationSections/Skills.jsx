@@ -3,7 +3,7 @@ import { FaUserLock } from 'react-icons/fa'
 import { SiExpress, SiAmazondynamodb, SiAwslambda, SiAmazonapigateway, SiMongodb } from 'react-icons/si'
 import { DiReact, DiJavascript, DiCss3, DiHtml5, DiNodejsSmall } from "react-icons/di";
 import { useInView } from 'react-intersection-observer';
-import styles from '../Information.module.css'
+import styles from './Skills.module.css'
 
 export default function Skills() {
     const [active, setActive] = useState(false)
@@ -37,10 +37,10 @@ export default function Skills() {
             iconName: SiExpress,
             text: "Express.js"
         },
-        {
-            iconName: SiMongodb,
-            text: "MongoDB"
-        },
+        // {
+        //     iconName: SiMongodb,
+        //     text: "MongoDB"
+        // },
         {
             iconName: FaUserLock,
             text: "OAuth (PKCE)"
@@ -69,7 +69,7 @@ export default function Skills() {
         <div className={styles.skills}>
             <div>
                 <div className={`${styles.columnHeader} ${active ? styles.display : ""}`}>
-                    <span>Front-end</span>
+                    <span>Front-End</span>
                 </div>
                 <div className={styles.skillsIconsContainer}>
                     {frontEnd.map((skill, index) => {
@@ -84,7 +84,7 @@ export default function Skills() {
             </div>
             <div>
                 <div ref={ref} className={`${styles.columnHeader} ${active ? styles.display : ""}`}>
-                    <span>Back-end</span>
+                    <span>Back-End</span>
                 </div>
                 <div className={styles.skillsIconsContainer}>
                     {backEnd.map((skill, index) => {

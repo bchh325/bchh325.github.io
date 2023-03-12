@@ -1,0 +1,65 @@
+.columnHeader {
+    display: flex;
+    justify-content: center;
+    transition: transform 1s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50%);
+}
+
+.columnHeader span {
+    font-size: 2rem;
+    margin: 20px 0px;
+    cursor: default;
+}
+
+.skills {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    justify-content: center;
+    row-gap: 10%;
+}
+
+.skillsIconsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.icon {
+    font-size: 0.75rem;
+    aspect-ratio: 1/1;
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50%);
+
+}
+
+.icon span {
+    color: #00C6BC;
+    cursor: default;
+}
+
+.display {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (min-width: 2560px) {
+    .icon svg {
+        flex: 1 0 30%;
+        width: 60px;
+    }
+
+    .icon span {
+        font-size: 1.1rem;
+    }
+}

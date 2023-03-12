@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 import styles from './Information.module.css'
 import Skills from './InformationSections/Skills';
+import About from './InformationSections/About';
 
 export default function Information() {
   return (
@@ -16,9 +17,7 @@ export default function Information() {
       </div>
       <div className={styles.additionalInfo}>
         <Skills />
-        <div>
-            Info
-        </div>
+        <About />
         <div>Info</div>
       </div>
     </div>
