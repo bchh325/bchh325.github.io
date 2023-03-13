@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { FaCoffee, FaUserLock } from 'react-icons/fa'
-import { SiExpress, SiAmazondynamodb, SiAwslambda, SiAmazonapigateway, SiMongodb } from 'react-icons/si'
-import { DiReact, DiJavascript, DiCss3, DiHtml5, DiNodejsSmall } from "react-icons/di";
-import { useInView } from 'react-intersection-observer';
 
 import styles from './Information.module.css'
 import Skills from './InformationSections/Skills';
 import About from './InformationSections/About';
 
 export default function Information() {
+  const [numItems, setNumItems] = useState(0)
+  const [active, setActive] = useState(false)
+
+  const delay = 50
+
   return (
     <div className={styles.container}>
       <div className={styles.myInfo}>
@@ -16,8 +17,8 @@ export default function Information() {
         <span>Full Stack Developer</span>
       </div>
       <div className={styles.additionalInfo}>
-        <Skills />
-        <About />
+        <Skills delay={delay} setActive={setActive} setNumItems={setNumItems}/>
+        <About delay={delay} active={active} numItems={numItems}/>
         <div>Info</div>
       </div>
     </div>
