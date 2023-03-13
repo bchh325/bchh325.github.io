@@ -1,0 +1,12 @@
+.container {
+    background-color: #02162e;
+    color: #e2f1ff;
+    height: max-content;
+    border: 1px solid red;
+    padding: 5% 0;
+}
+
+.content {
+    height: 75vh;
+    border: 1px solid white;
+}

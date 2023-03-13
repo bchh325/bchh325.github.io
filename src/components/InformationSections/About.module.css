@@ -44,8 +44,14 @@
     justify-content: center;
 }
 
+.flex .icon {
+    cursor: pointer;
+    color: #00C6BC;
+}
+
 .icon {
     font-size: 40px;
+    color: #e2f1ff;
 }
 
 .pageIndicator {

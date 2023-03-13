@@ -74,14 +74,14 @@ export default function Skills({ setNumItems, setActive, delay }) {
     return (
         <div className={styles.skills}>
             <div>
-                <div className={`${styles.columnHeader} ${tempActive ?  styles.display : ""}`}>
+                <div className={`${styles.columnHeader} ${tempActive ? styles.display : ""}`}>
                     <span>Front-End</span>
                 </div>
                 <div className={styles.skillsIconsContainer}>
                     {frontEnd.map((skill, index) => {
                         const IconType = skill.iconName
                         return (
-                            <div style={{ transitionDelay: `${index * delay}ms` }} className={`${styles.icon} ${tempActive ?  styles.display : ""}`}>
+                            <div style={{ transitionDelay: `${index * delay}ms` }} className={`${styles.icon} ${tempActive ? styles.display : ""}`}>
                                 <IconType size={40} />
                                 <span>{skill.text}</span>
                             </div>)
@@ -89,14 +89,14 @@ export default function Skills({ setNumItems, setActive, delay }) {
                 </div>
             </div>
             <div>
-                <div ref={ref} className={`${styles.columnHeader} ${tempActive ?  styles.display : ""}`}>
+                <div ref={ref} className={`${styles.columnHeader} ${tempActive ? styles.display : ""}`}>
                     <span>Back-End</span>
                 </div>
                 <div className={styles.skillsIconsContainer}>
                     {backEnd.map((skill, index) => {
                         const IconType = skill.iconName
                         return (
-                            <div style={{ transitionDelay: `${((frontEnd.length) * delay) + index * delay}ms` }} className={`${styles.icon} ${tempActive ?  styles.display : ""}`}>
+                            <div style={{ transitionDelay: `${((frontEnd.length) * delay) + index * delay}ms` }} className={`${styles.icon} ${tempActive ? styles.display : ""}`}>
                                 <IconType size={40} />
                                 <span>{skill.text}</span>
                             </div>)

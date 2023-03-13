@@ -3,6 +3,7 @@ import './App.css';
 import Information from './components/Information';
 import Nav from './components/Nav';
 import ParallaxBackground from './components/ParallaxBackground';
+import Project from './components/Project';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Nav />
         <ParallaxBackground />
         <Information />
+        <Project />
       </div>
     </div>
   );
