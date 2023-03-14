@@ -86,7 +86,7 @@ export default function Skills({ setNumItems, setActive, delay }) {
                                 <span>{skill.text}</span>
                             </div>
                         )
-                    })}''
+                    })}
                 </div>
             </div>
             <div>
