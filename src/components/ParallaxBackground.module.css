@@ -2,6 +2,7 @@
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    max-width: 100%;
     background-color: #02162e;
     position: relative;
 }
@@ -10,25 +11,25 @@
     font-weight: bolder;
     color: #02162e;
     position: absolute;
-    height: 100px;
-    left: 50%;
-    top: 25%;
-    width: 100%;
-    text-align: start;
+    top: 15%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: fit-content;
     z-index: 4;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .name {
-    margin-left: 20px;
     font-size: 5rem;
 }
 
 .position {
-    margin-left: 20px;
     font-size: 1.8rem;
+    font-weight: 300;
+    color: #004260;
 }
 
 .all {
@@ -98,12 +99,10 @@
 
 @media screen and (max-width: 1000px) {
     .name {
-        margin-left: 20px;
         font-size: 2.8rem;
     }
 
     .position {
-        margin-left: 20px;
         font-size: 1.1rem;
     }
 }

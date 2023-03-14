@@ -4,7 +4,26 @@ import styles from './Project.module.css'
 export default function Project() {
   return (
     <div className={styles.container}>
-        <div className={styles.content}>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil dicta quaerat officiis consequuntur eos, optio temporibus ipsa aperiam cum amet quam? Nobis temporibus quibusdam velit unde culpa minus beatae!</div>
+      <span>Project Name</span>
+      <div className={styles.content}>
+        <div className={styles.imageContainer}>
+          <div className={`${styles.arrow} ${styles.right}`}>Right Arrow</div>
+          <div className={`${styles.arrow} ${styles.left}`}>Left Arrow</div>
+        </div>
+        <div className={styles.techContainer}>
+          <div className={styles.icon}>
+            <span>Icon</span>
+            <span>JavaScript</span>
+          </div>
+          <div>
+            <span className={styles.icon}>Icon</span>
+            <span>DynamoDB</span>
+          </div>
+        </div>
+        <div className={styles.infoContainer}>
+          info
+        </div>
+      </div>
     </div>
   )
 }

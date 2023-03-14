@@ -3,10 +3,121 @@
     color: #e2f1ff;
     height: max-content;
     border: 1px solid red;
-    padding: 5% 0;
+    text-align: center;
+    padding: 50px 0;
 }
 
 .content {
-    height: 75vh;
+    overflow: hidden;
+    width: 100%;
     border: 1px solid white;
+    display: grid;
+    grid:
+        "images tech info" max-content / max-content max-content 1fr;
+}
+
+.imageContainer {
+    aspect-ratio: 16 / 9;
+    background-image: url("https://i.imgur.com/GF9c5F5.png");
+    background-size: cover;
+    background-position: center;
+    width: 40vw;
+    grid-area: images;
+    display: grid;
+    grid:
+        "arrowL . arrowR" 1fr / 1fr 80% 1fr;
+    outline: 1px solid red;
+    position: relative;
+}
+
+.arrow {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 10%;
+}
+
+.arrow::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+    position: absolute;
+}
+
+.left {
+    left: 0;
+}
+
+.left::before {
+    background-image: linear-gradient(to right,
+            hsla(0, 0%, 0%, 0.76) 0%,
+            hsla(0, 0%, 0%, 0.738) 19%,
+            hsla(0, 0%, 0%, 0.541) 34%,
+            hsla(0, 0%, 0%, 0.382) 47%,
+            hsla(0, 0%, 0%, 0.278) 56.5%,
+            hsla(0, 0%, 0%, 0.194) 65%,
+            hsla(0, 0%, 0%, 0.126) 73%,
+            hsla(0, 0%, 0%, 0.075) 80.2%,
+            hsla(0, 0%, 0%, 0.042) 86.1%,
+            hsla(0, 0%, 0%, 0.021) 91%,
+            hsla(0, 0%, 0%, 0.008) 95.2%,
+            hsla(0, 0%, 0%, 0.002) 98.2%,
+            hsla(0, 0%, 0%, 0) 100%);
+    right: 100%;
+}
+
+.left:hover::before {
+    right: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.right::before {
+    background-image: linear-gradient(to left,
+            hsla(0, 0%, 0%, 0.76) 0%,
+            hsla(0, 0%, 0%, 0.738) 19%,
+            hsla(0, 0%, 0%, 0.541) 34%,
+            hsla(0, 0%, 0%, 0.382) 47%,
+            hsla(0, 0%, 0%, 0.278) 56.5%,
+            hsla(0, 0%, 0%, 0.194) 65%,
+            hsla(0, 0%, 0%, 0.126) 73%,
+            hsla(0, 0%, 0%, 0.075) 80.2%,
+            hsla(0, 0%, 0%, 0.042) 86.1%,
+            hsla(0, 0%, 0%, 0.021) 91%,
+            hsla(0, 0%, 0%, 0.008) 95.2%,
+            hsla(0, 0%, 0%, 0.002) 98.2%,
+            hsla(0, 0%, 0%, 0) 100%);
+    left: 100%;
+}
+
+.right:hover::before {
+    left: 0;
+}
+
+
+.icon {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.techContainer {
+    grid-area: tech;
+    outline: 1px solid green;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoContainer {
+    grid-area: info;
+    display: flex;
+    justify-content: center;
+    outline: 1px solid cyan;
 }

@@ -84,8 +84,9 @@ export default function Skills({ setNumItems, setActive, delay }) {
                             <div style={{ transitionDelay: `${index * delay}ms` }} className={`${styles.icon} ${tempActive ? styles.display : ""}`}>
                                 <IconType size={40} />
                                 <span>{skill.text}</span>
-                            </div>)
-                    })}
+                            </div>
+                        )
+                    })}''
                 </div>
             </div>
             <div>
@@ -99,7 +100,8 @@ export default function Skills({ setNumItems, setActive, delay }) {
                             <div style={{ transitionDelay: `${((frontEnd.length) * delay) + index * delay}ms` }} className={`${styles.icon} ${tempActive ? styles.display : ""}`}>
                                 <IconType size={40} />
                                 <span>{skill.text}</span>
-                            </div>)
+                            </div>
+                        )
                     })}
                 </div>
             </div>
