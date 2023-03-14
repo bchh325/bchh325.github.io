@@ -1,39 +1,45 @@
 .container {
-    background-color: #02162e;
+    background-color: #021225;
+    border-radius: 5px;
     color: #e2f1ff;
-    height: max-content;
-    border: 1px solid red;
     text-align: center;
-    padding: 50px 0;
+    padding: 50px 25px;
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    transition: transform 1s cubic-bezier(0, .92, .87, 1), opacity 0.4s ease;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .content {
     overflow: hidden;
-    width: 100%;
-    border: 1px solid white;
     display: grid;
     grid:
-        "images tech info" max-content / max-content min-content 1fr;
+        "images tech info" max-content / 2fr min-content 1fr;
 }
 
 .scrollContainer {
     aspect-ratio: 16 / 9;
-    width: 40vw;
+    width: 100%;
     grid-area: images;
     display: grid;
     grid:
         "arrowL . arrowR" 1fr / 1fr 80% 1fr;
-    outline: 1px solid red;
     position: relative;
-    align-items: center;
 }
 
 .images {
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -41,13 +47,21 @@
 }
 
 .images div {
+    opacity: 0.2;
     position: absolute;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.25s ease;
-    border: 1px solid red;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.images:hover > div {
+    opacity: 0.7;
+}
+
+.arrow:hover ~ .images > div {
+    opacity: 0.7;
 }
 
 .images div[data-state="current"] {
@@ -75,6 +89,7 @@
 }
 
 .arrow {
+    z-index: 1;
     overflow: hidden;
     position: absolute;
     height: 100%;
@@ -90,7 +105,7 @@
 
 .arrow svg {
     font-size: 3rem;
-    opacity: 0.5;
+    opacity: 0.7;
     transition: color 0.3s cubic-bezier(0, .92, .87, 1), transform 0.3s cubic-bezier(0, .92, .87, 1);
 }
 
@@ -106,7 +121,7 @@
     left: 0;
 }
 
-.left:hover > svg {
+.left:hover>svg {
     opacity: 1;
     color: #00C6BC;
     transform: translateX(-50%);
@@ -138,7 +153,7 @@
     right: 0;
 }
 
-.right:hover > svg {
+.right:hover>svg {
     opacity: 1;
     color: #00C6BC;
     transform: translateX(50%);
@@ -171,7 +186,6 @@
     margin: 10px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -187,16 +201,25 @@
 
 .techContainer {
     grid-area: tech;
-    outline: 1px solid green;
     padding: 0px 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
 .infoContainer {
     grid-area: info;
     display: flex;
+    align-items: center;
+}
+
+.infoContent {
+    border-left: 1px solid #e2f1ff;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    outline: 1px solid cyan;
+    row-gap: 50px;
+    height: 75%;
+    width: fit-content;
+    padding: 0px 10px;
 }

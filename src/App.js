@@ -13,9 +13,11 @@ function App() {
         <Nav />
         <ParallaxBackground />
         <Information />
-        <Project />
-        <Project />
-        <Project />
+        <div className='projects'>
+          <Project />
+          <Project />
+          <Project />
+        </div>
       </div>
     </div>
   );

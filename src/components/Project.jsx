@@ -1,21 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react'
-
-import styles from './Project.module.css'
+import { useInView } from 'react-intersection-observer';
 
 import { SiExpress, SiAmazondynamodb, SiAwslambda, SiAmazonapigateway, SiMongodb } from 'react-icons/si'
 import { DiReact, DiJavascript, DiCss3, DiHtml5, DiNodejsSmall } from "react-icons/di";
 import { FaUserLock } from 'react-icons/fa'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
+import styles from './Project.module.css'
+
 export default function Project() {
   const imageRef = useRef(null)
   const [active, setActive] = useState(true)
-
-  const backgrounds = [
-    "background-color: green",
-    "background-color: red",
-    "background-color: blue"
-  ]
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.25
+  })
+  const [viewActive, setViewActive] = useState(false)
 
   const horizontalScroller = (arrowId) => {
     const currentRefChildren = imageRef.current.children
@@ -68,26 +68,32 @@ export default function Project() {
     }
   }
 
+  useEffect(() => {
+    if (inView) {
+      setViewActive(true)
+    }
+  }, [inView])
+
   const url1 = "https://fastly.picsum.photos/id/808/2560/1440.jpg?hmac=AFgVNKQNTmZBsG1yVwd1cVvrxTcQeB3oGD0nuTTAaTM"
   const url2 = "https://fastly.picsum.photos/id/981/2560/1440.jpg?hmac=UErIUvMY2cY7csDk13VBhHJBXdvaTlMHn_Ban5Am958"
   const url3 = "https://fastly.picsum.photos/id/452/2560/1440.jpg?hmac=2AunNZaOPJY-r9nfZ__Q_bvrQdUdwZyyPW9VNQI1-fs"
 
   return (
-    <div className={styles.container}>
+    <div ref={ref} className={`${styles.container} ${viewActive ? styles.active : ""}`}>
       <span>Project Name</span>
       <div className={styles.content}>
         <div className={styles.flex}>
           <div className={styles.scrollContainer}>
-            <div ref={imageRef} className={styles.images}>
-              <div style={{"backgroundImage": `url("${url1}")`}} data-state={"current"}>CURRENT</div>
-              <div style={{"backgroundImage": `url("${url2}")`}} data-state={"left"}>left</div>
-              <div style={{"backgroundImage": `url("${url3}")`}} data-state={"right"}>right</div>
-            </div>
             <div onClick={() => handleClick(2)} className={`${styles.arrow} ${styles.right}`}>
               <MdArrowForwardIos />
             </div>
             <div onClick={() => handleClick(1)} className={`${styles.arrow} ${styles.left}`}>
               <MdArrowBackIosNew />
+            </div>
+            <div ref={imageRef} className={styles.images}>
+              <div style={{ "backgroundImage": `url("${url1}")` }} data-state={"current"}>CURRENT</div>
+              <div style={{ "backgroundImage": `url("${url2}")` }} data-state={"left"}>left</div>
+              <div style={{ "backgroundImage": `url("${url3}")` }} data-state={"right"}>right</div>
             </div>
           </div>
         </div>
@@ -114,7 +120,14 @@ export default function Project() {
           </div>
         </div>
         <div className={styles.infoContainer}>
-          info
+          <div className={styles.infoContent}>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+          </div>
         </div>
       </div>
     </div>
