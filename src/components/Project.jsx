@@ -5,17 +5,18 @@ import { SiExpress, SiAmazondynamodb, SiAwslambda, SiAmazonapigateway, SiMongodb
 import { DiReact, DiJavascript, DiCss3, DiHtml5, DiNodejsSmall } from "react-icons/di";
 import { FaUserLock } from 'react-icons/fa'
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+import { BsDashLg } from "react-icons/bs";
 
 import styles from './Project.module.css'
 
 export default function Project() {
   const imageRef = useRef(null)
+
   const [active, setActive] = useState(true)
-  const [ref, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.25
-  })
   const [viewActive, setViewActive] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const [ref, inView, entry] = useInView({ threshold: 0.25 })
 
   const horizontalScroller = (arrowId) => {
     const currentRefChildren = imageRef.current.children
@@ -46,6 +47,12 @@ export default function Project() {
     }
 
     if (arrowId === 1) {
+      if (currentIndex === 0) {
+        setCurrentIndex(2)
+      } else {
+        setCurrentIndex(prev => prev - 1)
+      }
+
       currentRefChildren[leftIndex].dataset.disabletransition = "true"
 
       currentRefChildren[currentIndex].dataset.state = "left"
@@ -53,6 +60,12 @@ export default function Project() {
       currentRefChildren[leftIndex].dataset.state = "right"
     }
     else if (arrowId === 2) {
+      if (currentIndex === 2) {
+        setCurrentIndex(0)
+      } else {
+        setCurrentIndex(prev => prev + 1)
+      }
+
       currentRefChildren[rightIndex].dataset.disabletransition = "true"
 
       currentRefChildren[currentIndex].dataset.state = "right"
@@ -80,7 +93,7 @@ export default function Project() {
 
   return (
     <div ref={ref} className={`${styles.container} ${viewActive ? styles.active : ""}`}>
-      <span>Project Name</span>
+      <span className={styles.projectName}>Project Name</span>
       <div className={styles.content}>
         <div className={styles.flex}>
           <div className={styles.scrollContainer}>
@@ -89,6 +102,17 @@ export default function Project() {
             </div>
             <div onClick={() => handleClick(1)} className={`${styles.arrow} ${styles.left}`}>
               <MdArrowBackIosNew />
+            </div>
+            <div className={styles.indicator}>
+              <div className={styles.icon}>
+                <BsDashLg className={currentIndex === 0 ? styles.activeIndicator : ""} />
+              </div>
+              <div className={styles.icon}>
+                <BsDashLg className={currentIndex === 1 ? styles.activeIndicator : ""} />
+              </div>
+              <div className={styles.icon}>
+                <BsDashLg className={currentIndex === 2 ? styles.activeIndicator : ""} />
+              </div>
             </div>
             <div ref={imageRef} className={styles.images}>
               <div style={{ "backgroundImage": `url("${url1}")` }} data-state={"current"}>CURRENT</div>
