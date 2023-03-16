@@ -69,24 +69,37 @@ export default function About({ active, numItems, delay }) {
       headerChildren[currentIndex].dataset.state = "right"
       headerChildren[rightIndex].dataset.state = "left"
       headerChildren[leftIndex].dataset.state = "current"
-    }  
+    }
   }
 
   return (
     <div className={styles.container}>
       <div ref={headerRef} style={{ transitionDelay: `${(numItems + 1) * delay}ms` }} className={`${active ? styles.display : ""} ${styles.header} ${styles.hide} ${styles.scrollContent}`}>
-          <div data-state={"current"}>Header 1</div>
-          <div data-state={"left"}>Header 2</div>
-          <div data-state={"right"}>Header 3</div>
+        <div data-state={"current"}>About Me</div>
+        <div data-state={"left"}>Newest Project?</div>
+        <div data-state={"right"}>What's New With Me?</div>
       </div>
       <div onClick={() => scroller(1)} style={{ transitionDelay: `${(numItems + 2) * delay}ms` }} className={`${styles.flex} ${styles.arrowL} ${active ? styles.display : ""} ${styles.hide}`}>
         <MdArrowBackIosNew className={styles.icon} />
       </div>
       <div style={{ transitionDelay: `${(numItems + 3) * delay}ms` }} className={`${styles.card} ${active ? styles.display : ""} ${styles.hide}`}>
         <div ref={contentRef} className={styles.scrollContent}>
-          <div data-state={"current"}>First Content  </div>
-          <div data-state={"left"}>Second Content </div>
-          <div data-state={"right"}>Third Content </div>
+          <div data-state={"current"}>
+            I'm a developer and third-year C.S. Undergraduate at CSULB that is driven by errors! I thrive in what I don't know and am always looking
+            for a challenge to improve my skillset. I take pride in learning quickly and setting small goals
+            in my projects to break down big problems into smaller, manageable pieces. Plus, I also have a thing for
+            trying to make things look nice.
+          </div>
+          <div data-state={"left"}>
+            Recently I have had success using Node/Express to create a proxy for OAuth's PKCE Flow for my latest project, Graphify, and had a blast doing so. I felt like I could finally use what was mine (as in my own projects) and I learned so much about what goes on behind the scenes.
+          </div>
+          <div data-state={"right"}>
+            <div>
+              I always wish I knew something when I start a project, from my first round of Tic-Tac-Toe, to using AWS, and now creating my own API while thinking about security and cookie storage. <br /> <br />
+
+              Now I'm currently planning to learn more about <span className={styles.highlight}>React Redux</span>, <span className={styles.highlight}>TypeScript</span>, <span className={styles.highlight}>Docker</span>, <span className={styles.highlight}>SASS/SCSS</span>, <span className={styles.highlight}>Jest</span> testing, and attempting to develop an app using a <span className={styles.highlight}>mobile-first approach</span>
+            </div>
+          </div>
         </div>
       </div>
       <div onClick={() => scroller(2)} style={{ transitionDelay: `${(numItems + 4) * delay}ms` }} className={`${styles.flex} ${styles.arrowR} ${active ? styles.display : ""} ${styles.hide}`}>

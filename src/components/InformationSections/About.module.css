@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid:
-        ". header ." max-content "arrowL card arrowR" 50% ". indicator ." max-content / 1fr 75% 1fr;
+        ". header ." max-content "arrowL card arrowR" 70% ". indicator ." max-content / 1fr 75% 1fr;
     /* grid-template-columns: 1fr 75% 1fr;
     grid-template-rows: max-content; */
     align-items: start;
@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-.scrollContent>div {
+.scrollContent > div {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -27,6 +27,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0px 10px;
 }
 
 .scrollContent div[data-state="current"] {
@@ -53,6 +56,10 @@
     align-items: center;
 }
 
+.card div {
+    font-size: 1.15rem;
+}
+
 .hide {
     transition: transform 1s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out, transform 0.4s ease;
     opacity: 0;
@@ -65,10 +72,15 @@
     font-size: 2rem;
     margin: 20px 0px;
     cursor: default;
+    color: #00C6BC;
 }
 
 .header div {
     transition-delay: 0.1s;
+}
+
+.highlight {
+    color: #00C6BC;
 }
 
 .display {
