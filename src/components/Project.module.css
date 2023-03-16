@@ -255,6 +255,7 @@
     grid-area: info;
     display: flex;
     align-items: center;
+    text-align: left;
 }
 
 .infoContent {

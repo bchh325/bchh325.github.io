@@ -111,9 +111,9 @@ export default function Project() {
     }
   }, [inView])
 
-  const url1 = "https://fastly.picsum.photos/id/808/2560/1440.jpg?hmac=AFgVNKQNTmZBsG1yVwd1cVvrxTcQeB3oGD0nuTTAaTM"
-  const url2 = "https://fastly.picsum.photos/id/981/2560/1440.jpg?hmac=UErIUvMY2cY7csDk13VBhHJBXdvaTlMHn_Ban5Am958"
-  const url3 = "https://fastly.picsum.photos/id/452/2560/1440.jpg?hmac=2AunNZaOPJY-r9nfZ__Q_bvrQdUdwZyyPW9VNQI1-fs"
+  const url1 = "https://camo.githubusercontent.com/bc13101fc25b01f6c8b18dc16b3b240c58e07af83825185e5c22f891b5e2f9e3/68747470733a2f2f692e696d6775722e636f6d2f47366a485671702e706e67"
+  const url2 = "https://camo.githubusercontent.com/c6038b64f8717ec3cabbea4bd575bca6aff0132989a12b21c04a972fef4fd0b8/68747470733a2f2f692e696d6775722e636f6d2f4e736d685935792e706e67"
+  const url3 = "https://i.imgur.com/5UFIqRr.png"
 
   return (
     <div ref={ref} className={`${styles.container} ${viewActive ? styles.active : ""}`}>
@@ -158,12 +158,14 @@ export default function Project() {
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.infoContent}>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt esse officiis molestiae!</span>
+            <span>Backend for Frontend Proxy created using Node.js and Express.js to interact with Spotify's Web API</span>
+            <span>Adds security using OAuth 2.0 Authorization Code Flow with PKCE (Proof Key for Code Exchange), which prevents exposure of tokens on client-side and prevents CSRF attacks</span>
+            <span>Separated endpoints created to request from Spotify's Authorization Servers and Web API</span>
+            <span>Session data (Refresh and Access Tokens) stored in MongoDB, while Session ID is stored in httpOnly cookie on the browser</span>
+            <span>Data parsing to create batches of params for API calls given a previous request to handle API limitations (ex. 50 song IDs / request, needs multiple requests to get full data)</span>
+            <span>Data parsing to extract relevant user playlist genre data and structure it in a usable "key:value" object to provide a visualization to the user</span>
+            <span>Caching API requests to both decrease server load and to increase load times on the client</span>
+            <span>State management using Redux</span>
           </div>
         </div>
       </div>
