@@ -7,35 +7,41 @@
     align-items: start;
 }
 
-.paragraphs {
+.activeIndicator {
+    color: #00C6BC;
+}
+
+.scrollContent {
     position: relative;
     height: 100%;
     width: 100%;
     display: grid;
+    overflow: hidden;
 }
 
-.paragraphs>div {
+.scrollContent>div {
     height: 100%;
     width: 100%;
-    outline: 4px solid green;
     position: absolute;
     transition: transform 0.25s ease, opacity 0.25s ease;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.paragraphs div[data-state="current"] {
+.scrollContent div[data-state="current"] {
     transform: translateX(0);
 }
 
-.paragraphs div[data-state="left"] {
+.scrollContent div[data-state="left"] {
     transform: translateX(-100%);
 }
 
-.paragraphs div[data-state="right"] {
+.scrollContent div[data-state="right"] {
     transform: translateX(100%);
 }
 
-.paragraphs div[data-disabletransition="true"] {
+.scrollContent div[data-disabletransition="true"] {
     transition: none;
 }
 
@@ -48,7 +54,7 @@
 }
 
 .hide {
-    transition: transform 1s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+    transition: transform 1s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out, transform 0.4s ease;
     opacity: 0;
     transform: translateY(-50%);
 }
@@ -59,6 +65,10 @@
     font-size: 2rem;
     margin: 20px 0px;
     cursor: default;
+}
+
+.header div {
+    transition-delay: 0.1s;
 }
 
 .display {
@@ -73,14 +83,16 @@
     justify-content: center;
 }
 
-.flex .icon {
+.flex:hover {
     cursor: pointer;
+}
+
+.flex .icon {
     color: #00C6BC;
 }
 
 .icon {
     font-size: 40px;
-    color: #e2f1ff;
 }
 
 .pageIndicator {
@@ -96,7 +108,23 @@
     border-left: 2px solid white;
 }
 
+.arrowL svg {
+    transition: transform 0.3s ease;
+}
+
+.arrowL:hover svg {
+    transform: translateX(-25%);
+}
+
 .arrowR {
     grid-area: arrowR;
     border-right: 2px solid white;
+}
+
+.arrowR svg {
+    transition: transform 0.3s ease;
+}
+
+.arrowR:hover svg {
+    transform: translateX(25%);
 }

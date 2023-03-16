@@ -18,9 +18,32 @@ export default function Project() {
 
   const [ref, inView, entry] = useInView({ threshold: 0.25 })
 
+  const skills = [
+    {
+      iconName: DiReact,
+      text: "React.js"
+    },
+    {
+      iconName: DiNodejsSmall,
+      text: "Node.js"
+    },
+    {
+      iconName: SiExpress,
+      text: "Express.js"
+    },
+    {
+      iconName: SiMongodb,
+      text: "MongoDB"
+    },
+    {
+      iconName: FaUserLock,
+      text: "OAuth (PKCE)"
+    }
+  ]
+
+
   const horizontalScroller = (arrowId) => {
     const currentRefChildren = imageRef.current.children
-    const maxIndex = imageRef.current.children.length - 1
 
     console.log(currentRefChildren)
     let currentIndex
@@ -84,6 +107,7 @@ export default function Project() {
   useEffect(() => {
     if (inView) {
       setViewActive(true)
+      console.log(entry)
     }
   }, [inView])
 
@@ -104,13 +128,13 @@ export default function Project() {
               <MdArrowBackIosNew />
             </div>
             <div className={styles.indicator}>
-              <div className={styles.icon}>
+              <div className={`${styles.icon} ${styles.display}`}>
                 <BsDashLg className={currentIndex === 0 ? styles.activeIndicator : ""} />
               </div>
-              <div className={styles.icon}>
+              <div className={`${styles.icon} ${styles.display}`}>
                 <BsDashLg className={currentIndex === 1 ? styles.activeIndicator : ""} />
               </div>
-              <div className={styles.icon}>
+              <div className={`${styles.icon} ${styles.display}`}>
                 <BsDashLg className={currentIndex === 2 ? styles.activeIndicator : ""} />
               </div>
             </div>
@@ -122,26 +146,15 @@ export default function Project() {
           </div>
         </div>
         <div className={styles.techContainer}>
-          <div className={styles.icon}>
-            <DiReact />
-            <span>React.js</span>
-          </div>
-          <div className={styles.icon}>
-            <DiNodejsSmall />
-            <span>Node.js</span>
-          </div>
-          <div className={styles.icon}>
-            <SiExpress />
-            <span>Express.js</span>
-          </div>
-          <div className={styles.icon}>
-            <SiMongodb />
-            <span>MongoDB</span>
-          </div>
-          <div className={styles.icon}>
-            <FaUserLock />
-            <span>OAuth (PKCE)</span>
-          </div>
+          {skills.map((skill, index) => {
+            const IconType = skill.iconName
+            return (
+              <div style={{ transitionDelay: `${index * 175}ms` }} className={`${styles.icon} ${viewActive ? styles.display : ""}`}>
+                <IconType size={40} />
+                <span>{skill.text}</span>
+              </div>
+            )
+          })}
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.infoContent}>
