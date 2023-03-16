@@ -30,9 +30,17 @@
 }
 
 .projectName {
-    font-size: 2rem;
     padding: 10px 0px;
-    border: 1px solid red;
+    text-align: left;
+}
+
+.projectName div:nth-child(1) {
+    font-size: 1.5rem;
+    color: #00C6BC;
+}
+
+.projectName div:nth-child(2) {
+    font-size: 0.9rem;
 }
 
 .scrollContainer {
@@ -41,8 +49,7 @@
     grid-area: images;
     display: grid;
     grid:
-        "arrowL . arrowR" 1fr 
-        ". indicator ."
+        "arrowL . arrowR" 1fr ". indicator ."
         / 1fr 80% 1fr;
     position: relative;
 }
@@ -66,25 +73,26 @@
     overflow: hidden;
 }
 
-.images > div {
+.images>div {
     opacity: 0.2;
     position: absolute;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.images:hover > div {
+.images:hover>div {
     opacity: 0.7;
 }
 
-.arrow:hover ~ .images > div {
+.arrow:hover~.images>div {
     opacity: 0.7;
 }
 
-.arrow:hover ~ .indicator {
+.arrow:hover~.indicator {
     opacity: 1;
 }
 
@@ -212,6 +220,9 @@
     flex-direction: column;
     align-items: center;
     transition: transform 0.4s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+}
+
+.hide {
     opacity: 0;
     transform: translateY(-50%);
 }
@@ -263,8 +274,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 50px;
+    row-gap: 30px;
     height: 75%;
     width: fit-content;
     padding: 0px 10px;
+}
+
+.infoContent span {
+    transition: transform 0.4s cubic-bezier(0, .92, .87, 1), opacity 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1920px)  {
+    .infoContent {
+        font-size: 0.8rem;
+    }
 }

@@ -1,9 +1,13 @@
 import { useRef, useState } from 'react';
+
 import './App.css';
+
 import Information from './components/Information';
 import Nav from './components/Nav';
 import ParallaxBackground from './components/ParallaxBackground';
 import Project from './components/Project';
+
+import projectInfo from './projectInformation';
 
 function App() {
 
@@ -14,7 +18,8 @@ function App() {
         <ParallaxBackground />
         <Information />
         <div className='projects'>
-          <Project />
+          <Project obj={projectInfo.one} />
+          <Project obj={projectInfo.one} />
         </div>
       </div>
     </div>
