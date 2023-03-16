@@ -1,13 +1,42 @@
 .container {
     display: grid;
-    grid: 
-    ". header ." max-content
-    "arrowL card arrowR" 50%
-    ". indicator ." max-content
-    / 1fr 75% 1fr;
+    grid:
+        ". header ." max-content "arrowL card arrowR" 50% ". indicator ." max-content / 1fr 75% 1fr;
     /* grid-template-columns: 1fr 75% 1fr;
     grid-template-rows: max-content; */
     align-items: start;
+}
+
+.paragraphs {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+.paragraphs>div {
+    height: 100%;
+    width: 100%;
+    outline: 4px solid green;
+    position: absolute;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+
+}
+
+.paragraphs div[data-state="current"] {
+    transform: translateX(0);
+}
+
+.paragraphs div[data-state="left"] {
+    transform: translateX(-100%);
+}
+
+.paragraphs div[data-state="right"] {
+    transform: translateX(100%);
+}
+
+.paragraphs div[data-disabletransition="true"] {
+    transition: none;
 }
 
 .card {
