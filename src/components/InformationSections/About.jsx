@@ -91,13 +91,13 @@ export default function About({ active, numItems, delay }) {
             trying to make things look nice.
           </div>
           <div data-state={"left"}>
-            Recently I have had success using Node/Express to create a proxy for OAuth's PKCE Flow for my latest project, Graphify, and had a blast doing so. I felt like I could finally use what was mine (as in my own projects) and I learned so much about what goes on behind the scenes.
+            Recently I have had success using Node/Express to create a proxy for OAuth's PKCE Flow for my latest project, Graphify, and had a blast doing so. I felt like I could finally use what was mine (as in my own playlists) and I learned so much about what goes on behind the scenes.
           </div>
           <div data-state={"right"}>
             <div>
               I always wish I knew something when I start a project, from my first round of Tic-Tac-Toe, to using AWS, and now creating my own API while thinking about security and cookie storage. <br /> <br />
 
-              Now I'm currently planning to learn more about <span className={styles.highlight}>React Redux</span>, <span className={styles.highlight}>TypeScript</span>, <span className={styles.highlight}>Docker</span>, <span className={styles.highlight}>SASS/SCSS</span>, <span className={styles.highlight}>Jest</span> testing, and attempting to develop an app using a <span className={styles.highlight}>mobile-first approach</span>
+              Now I'm currently planning to learn more about <span className={styles.highlight}>React Redux</span>, <span className={styles.highlight}>TypeScript</span>, <span className={styles.highlight}>Docker</span>, <span className={styles.highlight}>SASS/SCSS</span>, <span className={styles.highlight}>Jest</span> testing, and attempting to develop an app using a <span className={styles.highlight}>mobile-first approach</span> in the coming months.
             </div>
           </div>
         </div>

@@ -6,5 +6,5 @@
 .projects {
     display: flex;
     flex-direction: column;
-    row-gap: 10vw;
+    row-gap: 2vw;
 }

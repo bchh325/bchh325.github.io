@@ -20,6 +20,7 @@ function App() {
         <div className='projects'>
           <Project obj={projectInfo.one} />
           <Project obj={projectInfo.two} />
+          <Project obj={projectInfo.three} />
         </div>
       </div>
     </div>
