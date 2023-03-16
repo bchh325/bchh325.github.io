@@ -15,8 +15,6 @@ function App() {
         <Information />
         <div className='projects'>
           <Project />
-          <Project />
-          <Project />
         </div>
       </div>
     </div>
