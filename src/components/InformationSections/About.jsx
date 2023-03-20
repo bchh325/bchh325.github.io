@@ -74,10 +74,12 @@ export default function About({ active, numItems, delay }) {
 
   return (
     <div className={styles.container}>
-      <div ref={headerRef} style={{ transitionDelay: `${(numItems + 1) * delay}ms` }} className={`${active ? styles.display : ""} ${styles.header} ${styles.hide} ${styles.scrollContent}`}>
-        <div data-state={"current"}>About Me</div>
-        <div data-state={"left"}>Newest Project?</div>
-        <div data-state={"right"}>What's New With Me?</div>
+      <div className={styles.header}>
+        <div ref={headerRef} style={{ transitionDelay: `${(numItems + 1) * delay}ms` }} className={`${active ? styles.display : ""} ${styles.hide} ${styles.headerContent}`}>
+          <div data-state={"current"}>About Me</div>
+          <div data-state={"left"}>Newest Project?</div>
+          <div data-state={"right"}>What's New With Me?</div>
+        </div>
       </div>
       <div onClick={() => scroller(1)} style={{ transitionDelay: `${(numItems + 2) * delay}ms` }} className={`${styles.flex} ${styles.arrowL} ${active ? styles.display : ""} ${styles.hide}`}>
         <MdArrowBackIosNew className={styles.icon} />

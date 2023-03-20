@@ -87,3 +87,62 @@
         font-size: 2.5rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .navHandler {
+        position: fixed;
+        right: 0;
+        top: 0;
+        margin: 2rem;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;
+        z-index: 12;
+    }
+
+    .navHandler svg {
+        color: #00C6BC;
+    }
+
+    .navContent {
+        height: 100%;
+        width: 80%;
+        right: 0;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10rem;
+    }
+
+    .left {
+        margin: 0.5rem 0;
+        flex-direction: column;
+    }
+
+    .right {
+        height: max-content;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .collapse {
+        transform: none;
+    }
+
+    .collapseMobile {
+        transform: translateX(100%);
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+}

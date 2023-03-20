@@ -10,18 +10,24 @@ import Project from './components/Project';
 import projectInfo from './projectInformation';
 
 function App() {
+  const aboutRef = useRef(null)
+  const projectRef = useRef(null)
+  const contactRef = useRef(null)
 
   return (
     <div className="App">
-      <div>
-        <Nav />
-        <ParallaxBackground />
+      <Nav refs={{ aboutRef, projectRef, contactRef }} />
+      <ParallaxBackground />
+      <div ref={aboutRef} className='about'>
         <Information />
-        <div className='projects'>
-          <Project obj={projectInfo.one} />
-          <Project obj={projectInfo.two} />
-          <Project obj={projectInfo.three} />
-        </div>
+      </div>
+      <div ref={projectRef} className='projects'>
+        <Project obj={projectInfo.one} />
+        <Project obj={projectInfo.two} />
+        <Project obj={projectInfo.three} />
+      </div>
+      <div ref={contactRef} className='contact'>
+        contact stuff
       </div>
     </div>
   );

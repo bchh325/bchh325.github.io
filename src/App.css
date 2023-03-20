@@ -8,3 +8,11 @@
     flex-direction: column;
     row-gap: 2vw;
 }
+
+.resume {
+    height: 100vh;
+}
+
+.contact {
+    margin: 2vw 0px;
+}

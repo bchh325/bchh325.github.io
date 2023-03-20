@@ -35,10 +35,10 @@ const projectInfo = {
             url3: "https://i.imgur.com/5UFIqRr.png"
         },
         content: [
-            "Backend for Frontend Proxy created using Node.js and Express.js to interact with Spotify's Web API, adding security by preventing exposure of tokens on the client.",
-            "Integrated all aspects of OAuth 2.0 Authorization Code Flow w/ PKCE (incl. generation/encryption of verifiers, generation/comparison of state parameters to protect against CSRF on redirect URIs).",
+            "Backend for Frontend Proxy created using Node.js and Express.js to interact with Spotify's Web API, which adds security by preventing exposure of tokens on the client.",
+            "Integrated all aspects of OAuth 2.0 Authorization Code Flow w/ PKCE (incl. generation/encryption of verifiers, generation/comparison of state parameters to protect against CSRF attacks on redirect URIs).",
             "Managed storage of tokens and session data, where session IDs are stored via an httpOnly cookie on the client and their corresponding access/refresh tokens in MongoDB.",
-            "Created separate endpoints to request from both Spotify's authorization servers and web API.",
+            "Created separate endpoints and corresponding controller functions to request from both Spotify's authorization servers and web API.",
             "Data parsing to create batches of params for API calls given a previous request to handle API limitations (ex. 50 song IDs / request, needs multiple requests to get full set of data).",
             "Data parsing to extract relevant user playlist genre data and structure it in a usable \"key:value\" object to provide a visualization to the user.",
             "API response caching to both decrease server load and decrease load times on the client.",
