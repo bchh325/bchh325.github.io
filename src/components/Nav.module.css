@@ -107,7 +107,7 @@
 
     .navContent {
         min-height: 100dvh;
-        width: 80%;
+        width: 100%;
         right: 0;
         flex-direction: column;
         display: flex;

@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid:
-        ". header ." max-content "arrowL card arrowR" 50% ". indicator ." max-content / 1fr 75% 1fr;
+        ". header ." max-content "arrowL card arrowR" 70% ". indicator ." max-content / 1fr 75% 1fr;
     /* grid-template-columns: 1fr 75% 1fr;
     grid-template-rows: max-content; */
     align-items: start;
@@ -13,15 +13,19 @@
 
 .scrollContent {
     position: relative;
-    height: 250px;
+    height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
 .scrollContent>div {
-    height: 100%;
     width: 100%;
     position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     transition: transform 0.25s ease, opacity 0.25s ease;
     display: flex;
     align-items: center;
@@ -201,11 +205,22 @@
         cursor: default;
         color: #00C6BC;
     }
+
+    .arrowL,
+    .arrowR {
+        border: 0px;
+    }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
     .card div {
         font-size: 1rem;
+    }
+
+
+    .scrollContent>div {
+        line-height: 20px;
+        height: 300px;
     }
 
     .header {

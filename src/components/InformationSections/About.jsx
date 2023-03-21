@@ -88,12 +88,12 @@ export default function About({ active, numItems, delay }) {
         <div ref={contentRef} className={styles.scrollContent}>
           <div data-state={"current"}>
             I'm a developer and third-year C.S. Undergraduate at CSULB that is driven by errors! I thrive in what I don't know and am always looking
-            for a challenge to improve my skillset. I take pride in learning quickly and setting small goals
+            for a challenge to improve my skillset. <br/><br/> I take pride in learning quickly and setting small goals
             in my projects to break down big problems into smaller, manageable pieces. Plus, I also have a thing for
             trying to make things look nice.
           </div>
           <div data-state={"left"}>
-            Recently I have had success using Node/Express to create a proxy for OAuth's PKCE Flow for my latest project, Graphify, and had a blast doing so. I felt like I could finally use what was mine (as in my own playlists) and I learned so much about what goes on behind the scenes.
+            Recently I have had success using Node/Express to create a proxy for OAuth's PKCE Flow for my latest project, Graphify, and had a blast doing so. <br/><br/> I felt like I could finally use what was mine (as in my own playlists) and I learned so much about what goes on behind the scenes.
           </div>
           <div data-state={"right"}>
             <div>

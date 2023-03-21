@@ -11,6 +11,11 @@ export default function ParallaxBackground() {
       console.log("Less than 768")
       setIsActive(false)
     }
+    document.querySelectorAll('*').forEach(elem => {
+      if (elem.offsetWidth > document.documentElement.offsetWidth) {
+          console.log('Problem child: ', elem);
+      }
+    });
   }, [])
 
   return (
