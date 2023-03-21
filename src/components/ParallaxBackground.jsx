@@ -1,11 +1,29 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './ParallaxBackground.module.css'
 import { Parallax } from 'react-scroll-parallax';
-import { AiFillCaretDown } from "react-icons/ai";
+import { AiOutlineDown } from "react-icons/ai";
+import { BsChevronCompactDown } from "react-icons/bs";
 
 export default function ParallaxBackground() {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [isActive, setIsActive] = useState(true)
+  const [hideArrow, setHideArrow] = useState(false)
+
+  useEffect(() => {
+    let prevScroll = 0
+    window.onscroll = function () {
+      const currentScroll = window.scrollY
+
+      console.log(currentScroll)
+      if (currentScroll > prevScroll) {
+        console.log("down")
+        setHideArrow(true)
+      } else if (currentScroll <= 50) {
+        setHideArrow(false)
+      }
+      prevScroll = currentScroll
+    }
+  }, [])
 
   useEffect(() => {
     if (windowSize.current[0] <= 768) {
@@ -19,8 +37,8 @@ export default function ParallaxBackground() {
       <div className={styles.infoContainer}>
         <span className={styles.name}>Bryan Chhorb</span>
         <span className={styles.position}>Full Stack Developer</span>
-        <div className={styles.arrow}>
-            <AiFillCaretDown />
+        <div className={`${styles.arrow} ${hideArrow ? styles.hide : ""}`}>
+          <BsChevronCompactDown />
         </div>
       </div>
       <Parallax easeing={"linear"} speed={isActive ? -2 : 0} className={`${styles["bg-1"]} ${styles.all}`} />

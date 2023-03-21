@@ -11,28 +11,35 @@
     font-weight: bolder;
     color: #02162e;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
-    z-index: 15;
+    z-index: 11;
     display: flex;
     flex-direction: column;
     overflow: visible;
 }
 
 .arrow {
-    z-index: 15;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 6rem;
     animation-name: MoveUpDown;
-    animation-duration: 1s;
+    animation-duration: 1.75s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 .name {
