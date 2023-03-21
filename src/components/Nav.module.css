@@ -139,7 +139,7 @@
     }
 
     .collapseMobile {
-        transform: translateX(100%);
+        transform: translateX(105%);
     }
 
     .hide {

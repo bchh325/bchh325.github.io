@@ -156,7 +156,7 @@
 .left:hover>svg {
     opacity: 1;
     color: #00C6BC;
-    transform: translateX(-50%);
+    transform: translateX(-30%);
 }
 
 .left::before {
@@ -188,7 +188,7 @@
 .right:hover>svg {
     opacity: 1;
     color: #00C6BC;
-    transform: translateX(50%);
+    transform: translateX(30%);
 }
 
 .right::before {
