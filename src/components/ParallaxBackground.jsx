@@ -25,14 +25,14 @@ export default function ParallaxBackground() {
         <span className={styles.position}>Full Stack Developer</span>
       </div>
       <Parallax easeing={"linear"} speed={isActive ? -2 : 0} className={`${styles["bg-1"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -20 : 0} className={`${styles["bg-2"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -30 : 0} className={`${styles["bg-3"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -40 : 0} className={`${styles["bg-4"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -50 : 0} className={`${styles["bg-5"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -50 : 0} className={`${styles["bg-6"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -60 : 0} className={`${styles["bg-7"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -60 : 0} className={`${styles["bg-8"]} ${styles.all}`} />
-      <Parallax easeing={"linear"} speed={isActive ? -60 : 0} className={`${styles["bg-gradient"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -30 : 0} className={`${styles["bg-2"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -40 : 0} className={`${styles["bg-3"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -50 : 0} className={`${styles["bg-4"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -60 : 0} className={`${styles["bg-5"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -60 : 0} className={`${styles["bg-6"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -70 : 0} className={`${styles["bg-7"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -70 : 0} className={`${styles["bg-8"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -70 : 0} className={`${styles["bg-gradient"]} ${styles.all}`} />
     </div>
   )
 }
