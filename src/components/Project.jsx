@@ -13,7 +13,7 @@ export default function Project({ obj }) {
   const [viewActive, setViewActive] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const [ref, inView, entry] = useInView({ threshold: 0.20 })
+  const [ref, inView, entry] = useInView({ threshold: 0.10 })
 
   useEffect(() => {
     if (inView) {
