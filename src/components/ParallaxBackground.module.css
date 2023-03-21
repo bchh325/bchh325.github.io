@@ -11,23 +11,35 @@
     font-weight: bolder;
     color: #02162e;
     position: absolute;
-    top: 15%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: fit-content;
-    z-index: 4;
+    z-index: 15;
     display: flex;
     flex-direction: column;
 }
 
-.name {
+.arrow {
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 5rem;
+    animation-name: MoveUpDown;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.name {
+    font-size: 6rem;
 }
 
 .position {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 300;
     color: #004260;
 }
@@ -87,6 +99,18 @@
 .bg-gradient {
     background-image: url("../images/bg.png");
     z-index: 1;
+}
+
+@keyframes MoveUpDown {
+
+    0%,
+    100% {
+        transform: translateY(100%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
 }
 
 @media screen and (max-width: 1000px) {

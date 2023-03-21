@@ -1,21 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './ParallaxBackground.module.css'
 import { Parallax } from 'react-scroll-parallax';
+import { AiFillCaretDown } from "react-icons/ai";
 
 export default function ParallaxBackground() {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [isActive, setIsActive] = useState(true)
-  
+
   useEffect(() => {
     if (windowSize.current[0] <= 768) {
       console.log("Less than 768")
       setIsActive(false)
     }
-    document.querySelectorAll('*').forEach(elem => {
-      if (elem.offsetWidth > document.documentElement.offsetWidth) {
-          console.log('Problem child: ', elem);
-      }
-    });
   }, [])
 
   return (
@@ -23,6 +19,9 @@ export default function ParallaxBackground() {
       <div className={styles.infoContainer}>
         <span className={styles.name}>Bryan Chhorb</span>
         <span className={styles.position}>Full Stack Developer</span>
+        <div className={styles.arrow}>
+            <AiFillCaretDown />
+        </div>
       </div>
       <Parallax easeing={"linear"} speed={isActive ? -2 : 0} className={`${styles["bg-1"]} ${styles.all}`} />
       <Parallax easeing={"linear"} speed={isActive ? -30 : 0} className={`${styles["bg-2"]} ${styles.all}`} />
