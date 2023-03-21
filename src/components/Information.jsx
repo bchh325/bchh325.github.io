@@ -12,10 +12,6 @@ export default function Information() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.myInfo}>
-        <span>Bryan Chhorb</span>
-        <span>Full Stack Developer</span>
-      </div>
       <div className={styles.additionalInfo}>
         <Skills delay={delay} setActive={setActive} setNumItems={setNumItems}/>
         <About delay={delay} active={active} numItems={numItems}/>
