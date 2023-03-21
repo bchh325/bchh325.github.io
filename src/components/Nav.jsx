@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function Nav({ refs }) {
   const [hideNav, setHideNav] = useState(false)
-  const [hideMobile, setHideMobile] = useState(false)
+  const [hideMobile, setHideMobile] = useState(true)
 
   const { aboutRef, projectRef, contactRef } = refs
 
@@ -26,6 +26,7 @@ export default function Nav({ refs }) {
 
   const scrollIntoView = (ref) => {
     ref.current.scrollIntoView()
+    setHideMobile(true)
   }
 
   const openInNewTab = (url) => {
