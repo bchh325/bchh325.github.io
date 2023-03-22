@@ -74,7 +74,7 @@ export default function Contact() {
       </div>
       <div className={styles.sendInfo}>
         <div className={styles.buttons}>
-          <div onClick={copyHandler}>chhorb.bryan@gmail.com <AiOutlineCopy /></div>
+          <div onClick={copyHandler}>chhorb.bryan@gmail.com</div>
         </div>
         <form ref={formRef} onSubmit={sendEmail} className={styles.forms}>
           <input onChange={handleInputs} value={inputs.user_name} placeholder='Name' type="text" name="user_name" />
