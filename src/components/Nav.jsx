@@ -44,17 +44,6 @@ export default function Nav({ refs }) {
     setHideMobile(prev => !prev)
   }
 
-  const handleResume = () => {
-    setHideMobile(true)
-    notification.destroy()
-    notification.error({
-      message: "Resume in progress!",
-      description: "Sorry about that, I am still in the process of editing my resume! In the meantime, shoot me an email!",
-      placement: 'top',
-      duration: 5
-    })
-  }
-
   return (
     <>
       <div onClick={handleNav} className={`${styles.navHandler} ${styles.icon} ${!hideMobile ? styles.show : styles.hide}`}>
@@ -79,7 +68,7 @@ export default function Nav({ refs }) {
             <span onClick={() => scrollIntoView(aboutRef)}>Me!</span>
             <span onClick={() => scrollIntoView(projectRef)}>Projects</span>
             <span onClick={() => scrollIntoView(contactRef)}>Contact</span>
-            <span onClick={handleResume}>Resume</span>
+            <span onClick={onClickUrl("https://drive.google.com/file/d/15vTDoehkJLn3aGRXdqbAUquCmLaNZSnL/view")}>Resume</span>
           </div>
         </div>
       </div>
