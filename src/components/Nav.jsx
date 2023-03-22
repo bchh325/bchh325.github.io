@@ -45,6 +45,7 @@ export default function Nav({ refs }) {
   }
 
   const handleResume = () => {
+    setHideMobile(true)
     notification.destroy()
     notification.error({
       message: "Resume in progress!",
