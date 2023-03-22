@@ -4,10 +4,6 @@
     color: #e2f1ff;
     text-align: center;
     padding: 25px 25px;
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
