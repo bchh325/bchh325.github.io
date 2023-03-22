@@ -124,7 +124,7 @@
 @media screen and (max-width: 1000px) {
     .infoContainer {
         left: 0%;
-        z-index: 6;
+        z-index: 11;
         text-align: start;
     }
 }

@@ -3,6 +3,8 @@ import { useInView } from 'react-intersection-observer';
 
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { BsDashLg } from "react-icons/bs";
+import { GoLinkExternal } from "react-icons/go";
+import { FaGithub } from "react-icons/fa";
 
 import styles from './Project.module.css'
 
@@ -102,7 +104,7 @@ export default function Project({ obj }) {
       const IconType = skill.iconName
       skillsArray.push(
         <div style={{ transitionDelay: `${index * 150}ms` }} className={`${styles.icon} ${styles.hide} ${viewActive ? styles.display : ""}`}>
-          <IconType size={40} />
+          <IconType />
           <span>{skill.text}</span>
         </div>
       )
@@ -121,6 +123,15 @@ export default function Project({ obj }) {
     })
 
     return contentArray
+  }
+
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
+  const onClickUrl = (url) => {
+    return () => openInNewTab(url)
   }
 
   return (
@@ -156,6 +167,10 @@ export default function Project({ obj }) {
             {renderContent()}
           </div>
         </div>
+      </div>
+      <div className={styles.buttons}>
+          <div style={ obj.hasDemo ? {} : {"display": "none"}}onClick={onClickUrl(obj.demo)}>Live Demo<GoLinkExternal /></div>
+          <div onClick={onClickUrl(obj.github)}>Repository<FaGithub /></div>
       </div>
     </div>
   )

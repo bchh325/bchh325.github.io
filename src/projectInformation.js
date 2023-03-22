@@ -26,7 +26,7 @@ const projectInfo = {
             },
             {
                 iconName: FaUserLock,
-                text: "OAuth (PKCE)"
+                text: "OAuth (PKCE) Proxy"
             }
         ],
         images: {
@@ -43,7 +43,9 @@ const projectInfo = {
             "Data parsing to extract relevant user playlist genre data and structure it in a usable \"key:value\" object to provide a visualization to the user.",
             "API response caching to both decrease server load and decrease load times on the client.",
             "State management using Redux.",
-        ]
+        ],
+        github: "https://github.com/bchh325/spotify-distribution",
+        hasDemo: false
     },
     two: {
         name: "Stock Watchlist (Dec. 2022)",
@@ -82,7 +84,10 @@ const projectInfo = {
             "Created Lambda functions using Node.js which were integrated on different endpoints on API Gateway to perform a certain task.",
             "Performed operations on DynamoDB using Lambda functions to store a unique user's ticker symbols.",
             "Created and managed users through AWS Cognito, which involves registration, login, and unauthenticated identities (guest users).",
-        ]
+        ],
+        github: "https://github.com/bchh325/trading-site",
+        demo: "https://bchh325.github.io/trading-site/#/",
+        hasDemo: true
     },
     three: {
         name: "Minimax Tic-Tac-Toe (Sept. 2022)",
@@ -109,7 +114,10 @@ const projectInfo = {
         content: [
             "Performed operations on Firebase to update global wins/losses/ties.",
             "Implemented logic for Minimax algorithm to traverse all possible game trees for the AI to play against and picked the best move.",
-        ]
+        ],
+        github: "https://github.com/bchh325/tictactoe/tree/master",
+        demo: "https://bchh325.github.io/tictactoe/",
+        hasDemo: true
     }
 }
 

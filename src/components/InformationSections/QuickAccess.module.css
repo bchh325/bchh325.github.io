@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container span {
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+.quickInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+@media screen and (max-width: 1550px) {
+    .container span {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .container span {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container span {
+        font-size: 1.5rem;
+    }
+}

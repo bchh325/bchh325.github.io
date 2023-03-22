@@ -11,14 +11,13 @@ export default function ParallaxBackground() {
 
   useEffect(() => {
     let prevScroll = 0
-    window.onscroll = function () {
+    window.addEventListener('scroll', arrowDown)
+    function arrowDown () {
       const currentScroll = window.scrollY
 
-      console.log(currentScroll)
       if (currentScroll > prevScroll) {
-        console.log("down")
         setHideArrow(true)
-      } else if (currentScroll <= 50) {
+      } else if (currentScroll <= 500) {
         setHideArrow(false)
       }
       prevScroll = currentScroll
@@ -27,7 +26,6 @@ export default function ParallaxBackground() {
 
   useEffect(() => {
     if (windowSize.current[0] <= 768) {
-      console.log("Less than 768")
       setIsActive(false)
     }
   }, [])
@@ -41,7 +39,7 @@ export default function ParallaxBackground() {
           <BsChevronCompactDown />
         </div>
       </div>
-      <Parallax easeing={"linear"} speed={isActive ? -2 : 0} className={`${styles["bg-1"]} ${styles.all}`} />
+      <Parallax easeing={"linear"} speed={isActive ? -5 : 0} className={`${styles["bg-1"]} ${styles.all}`} />
       <Parallax easeing={"linear"} speed={isActive ? -30 : 0} className={`${styles["bg-2"]} ${styles.all}`} />
       <Parallax easeing={"linear"} speed={isActive ? -40 : 0} className={`${styles["bg-3"]} ${styles.all}`} />
       <Parallax easeing={"linear"} speed={isActive ? -50 : 0} className={`${styles["bg-4"]} ${styles.all}`} />

@@ -12,7 +12,8 @@ export default function Nav({ refs }) {
 
   useEffect(() => {
     let prevScroll = 0
-    window.onscroll = function () {
+    window.addEventListener('scroll', navScroll)
+    function navScroll () {
       const currentScroll = window.scrollY
 
       if (currentScroll > prevScroll) {

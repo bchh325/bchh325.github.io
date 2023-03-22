@@ -6,11 +6,7 @@
 .projects {
     display: flex;
     flex-direction: column;
-    row-gap: 2vw;
-}
-
-.resume {
-    height: 100vh;
+    row-gap: 5vh;
 }
 
 .contact {

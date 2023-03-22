@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './Information.module.css'
 import Skills from './InformationSections/Skills';
 import About from './InformationSections/About';
+import QuickAccess from './InformationSections/QuickAccess';
 
 export default function Information() {
   const [numItems, setNumItems] = useState(0)
@@ -15,7 +16,6 @@ export default function Information() {
       <div className={styles.additionalInfo}>
         <Skills delay={delay} setActive={setActive} setNumItems={setNumItems}/>
         <About delay={delay} active={active} numItems={numItems}/>
-        <div>Info</div>
       </div>
     </div>
   )

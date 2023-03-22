@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import './App.css';
+import Contact from './components/Contact';
 
 import Information from './components/Information';
 import Nav from './components/Nav';
@@ -27,7 +28,7 @@ function App() {
         <Project obj={projectInfo.three} />
       </div>
       <div ref={contactRef} className='contact'>
-        contact stuff
+        <Contact />
       </div>
     </div>
   );

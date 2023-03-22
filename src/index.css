@@ -9,6 +9,10 @@ body {
   background-color: #02162e;
 }
 
+input, textarea {
+  all: unset;
+}
+
 * {
   scroll-behavior: smooth;
   margin: 0;

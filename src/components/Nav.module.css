@@ -90,6 +90,7 @@
 
 @media screen and (max-width: 768px) {
     .navHandler {
+        height: min-content;
         position: fixed;
         right: 0;
         top: 0;
@@ -97,7 +98,7 @@
         font-size: 2rem;
         justify-content: center;
         align-items: center;
-        z-index: 12;
+        z-index: 13;
     }
 
     .navHandler svg {
@@ -114,6 +115,7 @@
         align-items: center;
         justify-content: center;
         row-gap: 10rem;
+        z-index: 12;
     }
 
     .left {
