@@ -3,6 +3,7 @@ import styles from './Nav.module.css'
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { notification } from 'antd';
 
 export default function Nav({ refs }) {
   const [hideNav, setHideNav] = useState(false)
@@ -43,6 +44,16 @@ export default function Nav({ refs }) {
     setHideMobile(prev => !prev)
   }
 
+  const handleResume = () => {
+    notification.destroy()
+    notification.error({
+      message: "Resume in progress!",
+      description: "Sorry about that, I am still in the process of editing my resume! In the meantime, shoot me an email!",
+      placement: 'top',
+      duration: 5
+    })
+  }
+
   return (
     <>
       <div onClick={handleNav} className={`${styles.navHandler} ${styles.icon} ${!hideMobile ? styles.show : styles.hide}`}>
@@ -67,7 +78,7 @@ export default function Nav({ refs }) {
             <span onClick={() => scrollIntoView(aboutRef)}>Me!</span>
             <span onClick={() => scrollIntoView(projectRef)}>Projects</span>
             <span onClick={() => scrollIntoView(contactRef)}>Contact</span>
-            <span>Resume</span>
+            <span onClick={handleResume}>Resume</span>
           </div>
         </div>
       </div>
