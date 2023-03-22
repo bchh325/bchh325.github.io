@@ -10,6 +10,7 @@ import emailjs from '@emailjs/browser';
 export default function Contact() {
   const formRef = useRef(null)
 
+  const [isSending, setIsSending] = useState(false)
   const [inputs, setInputs] = useState({
     user_name: "",
     user_email: "",
@@ -29,7 +30,8 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault()
 
-    if (inputs.message !== "" && inputs.user_email !== "" && inputs.user_name !== "") {
+    if (inputs.message !== "" && inputs.user_email !== "" && inputs.user_name !== "" && !isSending) {
+      setIsSending(true)
       emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY)
         .then((result) => {
           console.log(result.text);
@@ -38,24 +40,34 @@ export default function Contact() {
           notification.success({
             message: "Email Sent!",
             placement: 'top',
-            duration: 1.5
+            duration: 3
           })
-
+          setIsSending(false)
           setInputs({
             user_name: "",
             user_email: "",
             message: ""
           })
         }, (error) => {
+          setIsSending(false)
           console.log(error.text);
         });
     } else {
-      notification.destroy()
-      notification.error({
-        message: "One or more fields are empty!",
-        placement: 'top',
-        duration: 1.5
-      })
+      if (!isSending) {
+        notification.destroy()
+        notification.error({
+          message: "One or more fields are empty!",
+          placement: 'top',
+          duration: 3
+        })
+      } else {
+        notification.destroy()
+        notification.error({
+          message: "Please wait for the current email to finish sending.",
+          placement: 'top',
+          duration: 3
+        })
+      }
     }
 
   }
